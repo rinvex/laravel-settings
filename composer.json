@@ -1,0 +1,82 @@
+{
+    "name": "rinvex/laravel-settings",
+    "description": "Rinvex Settings is a Laravel package for setting management. You can add, update, and delete application settings with ease, and use like the detaul Laravel config options. It comes with the ability to override config options on runtime, and supports tenantable features out of the box.",
+    "type": "library",
+    "keywords": [
+        "model",
+        "laravel",
+        "eloquent",
+        "translatable",
+        "setting",
+        "rinvex"
+    ],
+    "license": "MIT",
+    "homepage": "https://rinvex.com",
+    "support": {
+        "email": "help@rinvex.com",
+        "issues": "https://github.com/rinvex/laravel-settings/issues",
+        "source": "https://github.com/rinvex/laravel-settings",
+        "docs": "https://github.com/rinvex/laravel-settings/blob/master/README.md"
+    },
+    "authors": [
+        {
+            "name": "Rinvex LLC",
+            "homepage": "https://rinvex.com",
+            "email": "help@rinvex.com"
+        },
+        {
+            "name": "Abdelrahman Omran",
+            "homepage": "https://omranic.com",
+            "email": "me@omranic.com",
+            "role": "Project Lead"
+        },
+        {
+            "name": "The Generous Laravel Community",
+            "homepage": "https://github.com/rinvex/laravel-settings/contributors"
+        }
+    ],
+    "require": {
+        "php": "^8.1.0",
+        "illuminate/console": "^9.0.0 || ^10.0.0",
+        "illuminate/database": "^9.0.0 || ^10.0.0",
+        "illuminate/support": "^9.0.0 || ^10.0.0",
+        "rinvex/laravel-support": "^7.0.0",
+        "spatie/laravel-sluggable": "^3.3.0",
+        "spatie/laravel-translatable": "^6.0.0"
+    },
+    "require-dev": {
+        "codedungeon/phpunit-result-printer": "^0.32.0",
+        "illuminate/container": "^9.0.0 || ^10.0.0",
+        "phpunit/phpunit": "^10.1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Rinvex\\Settings\\": "src/"
+        },
+        "files": [
+            "src/Support/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Rinvex\\Settings\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "config": {
+        "sort-packages": true,
+        "preferred-install": "dist",
+        "optimize-autoloader": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Rinvex\\Settings\\Providers\\SettingsServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
