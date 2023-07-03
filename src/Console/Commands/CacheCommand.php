@@ -8,7 +8,7 @@ use Throwable;
 use LogicException;
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
-use Cortex\Settings\Bootstrap\LoadSettings;
+use Rinvex\Settings\Bootstrap\LoadSettings;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Illuminate\Contracts\Console\Kernel as ConsoleKernelContract;
 
