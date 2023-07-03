@@ -62,7 +62,7 @@ class SettingsServiceProvider extends ServiceProvider
 
         ! $this->app['config']['rinvex.settings.autoload_migrations'] || $this->loadMigrationsFrom(realpath(__DIR__.'/../../database/migrations'));
 
-        $this->app->macro('getCachedSettingsPath', fn() => $this->normalizeCachePath('APP_SETTING_CACHE', 'cache/settings.php'));
+        $this->app->macro('getCachedSettingsPath', fn () => $this->normalizeCachePath('APP_SETTING_CACHE', 'cache/settings.php'));
 
         // Map relations
         Relation::morphMap([

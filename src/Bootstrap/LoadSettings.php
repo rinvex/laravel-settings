@@ -7,7 +7,6 @@ namespace Rinvex\Settings\Bootstrap;
 use Exception;
 use Illuminate\Contracts\Foundation\Application;
 use Rinvex\Settings\Collections\SettingCollection;
-use Illuminate\Contracts\Database\Eloquent\Builder;
 
 class LoadSettings
 {
@@ -32,7 +31,7 @@ class LoadSettings
         $settings->set($appSettings = (file_exists($cached = $app->getCachedSettingsPath()) ? require $cached : self::getAppSettings()->toArray()));
 
         // Override config options dynamically on the fly
-        collect($appSettings)->filter(fn($setting) => $setting['override_config'] === true)->each(fn($setting) => config()->set($setting['key'], $setting['value']));
+        collect($appSettings)->filter(fn ($setting) => $setting['override_config'] === true)->each(fn ($setting) => config()->set($setting['key'], $setting['value']));
     }
 
     /**
