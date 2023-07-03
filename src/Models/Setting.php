@@ -8,13 +8,12 @@ use Illuminate\Support\Str;
 use Spatie\Sluggable\SlugOptions;
 use Rinvex\Support\Traits\HasSlug;
 use Illuminate\Database\Eloquent\Model;
-use Spatie\EloquentSortable\SortableTrait;
 use Rinvex\Support\Traits\HasTranslations;
 use Rinvex\Support\Traits\ValidatingTrait;
+use Spatie\EloquentSortable\SortableTrait;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\MorphToMany;
 
 class Setting extends Model
 {
@@ -143,7 +142,7 @@ class Setting extends Model
     protected function group(): Attribute
     {
         return Attribute::make(
-            get: fn() => Str::before($this->key, '.'),
+            get: fn () => Str::before($this->key, '.'),
         );
     }
 }

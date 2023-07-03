@@ -10,7 +10,6 @@ use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
 use Rinvex\Settings\Bootstrap\LoadSettings;
 use Symfony\Component\Console\Attribute\AsCommand;
-use Illuminate\Contracts\Console\Kernel as ConsoleKernelContract;
 
 #[AsCommand(name: 'setting:cache')]
 class CacheCommand extends Command
@@ -50,7 +49,8 @@ class CacheCommand extends Command
     /**
      * Create a new settings cache command instance.
      *
-     * @param  \Illuminate\Filesystem\Filesystem  $files
+     * @param \Illuminate\Filesystem\Filesystem $files
+     *
      * @return void
      */
     public function __construct(Filesystem $files)
@@ -63,9 +63,9 @@ class CacheCommand extends Command
     /**
      * Execute the console command.
      *
-     * @return void
-     *
      * @throws \LogicException
+     *
+     * @return void
      */
     public function handle()
     {
@@ -76,7 +76,8 @@ class CacheCommand extends Command
         $settingsPath = $this->laravel->getCachedSettingsPath();
 
         $this->files->put(
-            $settingsPath, '<?php return '.var_export($settings, true).';'.PHP_EOL
+            $settingsPath,
+            '<?php return '.var_export($settings, true).';'.PHP_EOL
         );
 
         try {
